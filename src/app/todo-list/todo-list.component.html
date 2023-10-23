@@ -1,0 +1,15 @@
+<div class="todo-container">
+  <input [(ngModel)]="newTodo" placeholder="Нове завдання...">
+  <button (click)="addTodo()">Додати</button>
+  <div class="todo-container" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let todo of todos; let i = index; trackBy: trackByIndex" cdkDrag>
+      {{ todo }}
+      <button (click)="removeTodo(i)">Видалити</button>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+  
